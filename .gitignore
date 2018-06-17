@@ -1,12 +1,12 @@
-/.gradle
-*/bin/
+*.gradle/*
+*bin/
 */build/
-*/.gradle
-*/.settings
-*/.classpath
+*.settings
+*.classpath
 */.project
 /.recommenders
 *.log
+*.class
 *.out
 *.idea
 *.bak
@@ -17,5 +17,4 @@ gradlew
 *.iml
 .DS_Store
 *.hprof
-gradle.properties
 /.project

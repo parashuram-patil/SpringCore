@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+    
+    <!-- <context:annotation-config /> -->
+    <context:component-scan
+		base-package="com.cs.*" />
+    
+	<bean id="triangle" class="com.cs.implementations.Triangle">
+		<!-- we can skip this using @Autowired, provided we have component-scan or annotation-config -->
+		<property name="type" value="My-Trangle"></property>
+		<property name="point" ref="point"></property>
+		
+		<!-- make sure, bean 'point' exists --> 
+		<!-- <property name="point">
+		<idref="point"/>
+		</property> -->
+		
+		<!-- specific to this property, not accessible for properties -->
+		<!-- <property name="point">
+			<bean id="point" class="com.cs.implementations.Points">
+				<property name="x" value="10"></property>
+				<property name="y" value="20"></property>
+			</bean>
+		</property> -->
+		<!-- Order of constructor ars matters, otherwide we need to specify index -->
+		<!-- <constructor-arg index="1" ref="point"/> <constructor-arg index="0" value="My-Trangle"/> -->
+	</bean>
+
+    <bean id="type" class="java.lang.String">
+		<constructor-arg value="My-Trangle" />
+	</bean>
+	
+	<bean id="point" class="com.cs.implementations.Points">
+		<property name="x" value="10"></property>
+		<property name="y" value="20"></property>
+	</bean>
+	
+	<!-- Trinangle can autowire using alias  myPoint -->
+	<!-- <property name="point" ref="myPoint"></property> inside main bean
+	<bean id="point2" class="com.cs.implementations.Points">
+		<property name="x" value="20"></property>
+		<property name="y" value="10"></property>
+	</bean>
+	<alias name="point2" alias="myPoint"></alias> -->
+</beans>
