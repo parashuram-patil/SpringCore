@@ -1,5 +1,7 @@
 package com.cs.implementations;
 
+import org.springframework.beans.factory.annotation.Required;
+
 import com.cs.interfaces.Shape;
 
 public class Triangle implements Shape {
@@ -17,6 +19,7 @@ public class Triangle implements Shape {
 		this.type = type;
 	}
 	
+	@Required
 	public void setPoint(Points point) {
 		this.point = point;
 	}
