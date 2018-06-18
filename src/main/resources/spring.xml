@@ -38,8 +38,8 @@
 	</bean>
 	
 	<bean id="point" class="com.cs.implementations.Points">
-		<property name="x" value="10"></property>
-		<property name="y" value="20"></property>
+		<property name="x" value="${point.x}"></property>
+		<property name="y" value="${point.y}"></property>
 	</bean>
 	
 	<!-- Trinangle can autowire using alias  myPoint -->
@@ -71,5 +71,8 @@
 	<!-- <bean id="xmlConfigDemo" class="com.cs.lifecycle.XmlConfigDemo" init-method="myInit" destroy-method="myDestroy"/> -->
 	
 	<!-- <bean class="com.cs.postprocessor.BeanPostProcessorDemo" /> -->
+	
+	<context:property-placeholder
+		location="classpath*:*.properties"/>
 	
 </beans>
