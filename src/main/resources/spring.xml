@@ -49,4 +49,23 @@
 		<property name="y" value="10"></property>
 	</bean>
 	<alias name="point2" alias="myPoint"></alias> -->
+	
+	<bean id="parentClass" class="com.cs.inheritance.InteritanceDemo" abstract="true">
+		<property name="point1" ref="point1"></property>
+	</bean>
+	
+	<bean id="childClass" class="com.cs.inheritance.InteritanceDemo" parent="parentClass">
+		<property name="point2" ref="point2"></property>
+	</bean>
+	
+	<bean id="point1" class="com.cs.implementations.Points">
+		<property name="x" value="10"></property>
+		<property name="y" value="20"></property>
+	</bean>
+	
+	<bean id="point2" class="com.cs.implementations.Points">
+		<property name="x" value="20"></property>
+		<property name="y" value="10"></property>
+	</bean>
+	
 </beans>

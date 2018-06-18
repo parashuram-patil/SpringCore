@@ -3,7 +3,7 @@ package com.cs.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.interfaces.Shape;
+import com.cs.inheritance.InteritanceDemo;
 
 public class MainClass {
 
@@ -12,10 +12,14 @@ public class MainClass {
 		//BeanFactory context = new XmlBeanFactory(new FileSystemResource("src/main/resources/spring.xml"));
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		
-		Shape shape = (Shape)context.getBean("triangle");
-		shape.draw();
+		//Shape shape = (Shape)context.getBean("triangle");
+		//shape.draw();
 		
-		//ApplicationContext 
+		/*Below line causes error since we have made abstract*/
+		//InteritanceDemo parentClass = (InteritanceDemo) context.getBean("parentClass");
+		
+		InteritanceDemo childClass = (InteritanceDemo) context.getBean("childClass");
+		childClass.display();
 	}
 
 }

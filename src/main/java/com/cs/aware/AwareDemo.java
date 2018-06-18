@@ -1,6 +1,4 @@
-package com.cs.implementations;
-
-import javax.annotation.PostConstruct;
+package com.cs.aware;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
@@ -14,7 +12,7 @@ public class AwareDemo implements ApplicationContextAware, BeanNameAware {
   private String             beanName;
   private ApplicationContext applicationContext;
   
-  @PostConstruct
+  //@PostConstruct
   public void display()
   {
     System.out.println("*********** Aware Examples *****************");
