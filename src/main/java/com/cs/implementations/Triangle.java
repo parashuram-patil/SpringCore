@@ -5,7 +5,6 @@ import com.cs.interfaces.Shape;
 public class Triangle implements Shape {
 
 	private Points point;
-	
 	private String type;
 
 
