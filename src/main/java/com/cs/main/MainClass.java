@@ -3,8 +3,6 @@ package com.cs.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.inheritance.InteritanceDemo;
-
 public class MainClass {
 
 	public static void main(String[] args) {
@@ -18,8 +16,8 @@ public class MainClass {
 		/*Below line causes error since we have made abstract*/
 		//InteritanceDemo parentClass = (InteritanceDemo) context.getBean("parentClass");
 		
-		InteritanceDemo childClass = (InteritanceDemo) context.getBean("childClass");
-		childClass.display();
+		//InteritanceDemo childClass = (InteritanceDemo) context.getBean("childClass");
+		//childClass.display();
 	}
 
 }
