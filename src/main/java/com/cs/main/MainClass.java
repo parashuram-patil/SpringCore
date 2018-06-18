@@ -1,6 +1,6 @@
 package com.cs.main;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainClass {
@@ -8,7 +8,7 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		//BeanFactory context = new XmlBeanFactory(new FileSystemResource("src/main/resources/spring.xml"));
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		
 		//Shape shape = (Shape)context.getBean("triangle");
 		//shape.draw();
@@ -18,6 +18,8 @@ public class MainClass {
 		
 		//InteritanceDemo childClass = (InteritanceDemo) context.getBean("childClass");
 		//childClass.display();
+		
+		context.registerShutdownHook();
 	}
 
 }
