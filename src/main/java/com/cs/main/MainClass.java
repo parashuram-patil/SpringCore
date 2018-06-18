@@ -3,7 +3,7 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.interfaces.Shape;
+import com.cs.implementations.AutowiredTriangle;
 
 public class MainClass {
 
@@ -14,8 +14,12 @@ public class MainClass {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
 		
-		Shape shape = (Shape)context.getBean("triangle");
-		shape.draw();
+		/*Shape shape = (Shape)context.getBean("triangle");
+		shape.draw();*/
+		
+		AutowiredTriangle shape = (AutowiredTriangle)context.getBean("autowiredTriangle");
+    shape.draw();
+		
 		
 		/*Below line causes error since we have made abstract*/
 		//InteritanceDemo parentClass = (InteritanceDemo) context.getBean("parentClass");

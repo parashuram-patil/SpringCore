@@ -59,6 +59,7 @@
 	</bean>
 	
 	<bean id="point1" class="com.cs.implementations.Points">
+		<qualifier value="autowiredTriangle"/>
 		<property name="x" value="10"></property>
 		<property name="y" value="20"></property>
 	</bean>
