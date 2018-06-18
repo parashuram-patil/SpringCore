@@ -2,9 +2,8 @@ package com.cs.lifecycle;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class InitializingBeanDemo implements InitializingBean, DisposableBean {
   
   
