@@ -70,6 +70,6 @@
 	
 	<!-- <bean id="xmlConfigDemo" class="com.cs.lifecycle.XmlConfigDemo" init-method="myInit" destroy-method="myDestroy"/> -->
 	
-	<bean class="com.cs.postprocessor.BeanPostProcessorDemo" />
+	<!-- <bean class="com.cs.postprocessor.BeanPostProcessorDemo" /> -->
 	
 </beans>

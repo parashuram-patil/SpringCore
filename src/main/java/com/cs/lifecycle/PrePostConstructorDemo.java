@@ -3,9 +3,7 @@ package com.cs.lifecycle;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.springframework.stereotype.Component;
-
-@Component
+//@Component
 public class PrePostConstructorDemo {
   
   public PrePostConstructorDemo() {
