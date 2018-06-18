@@ -68,6 +68,6 @@
 		<property name="y" value="10"></property>
 	</bean>
 	
-	<bean id="xmlConfigDemo" class="com.cs.lifecycle.XmlConfigDemo" init-method="myInit" destroy-method="myDestroy"/>
+	<!-- <bean id="xmlConfigDemo" class="com.cs.lifecycle.XmlConfigDemo" init-method="myInit" destroy-method="myDestroy"/> -->
 	
 </beans>
