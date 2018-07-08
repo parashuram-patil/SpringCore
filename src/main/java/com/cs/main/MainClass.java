@@ -3,8 +3,6 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.messagesource.MessageSourceDemo;
-
 public class MainClass {
 
 	public static void main(String[] args) {
@@ -33,8 +31,8 @@ public class MainClass {
 	     System.out.println(messageEN);
 	     System.out.println(messageFR);*/
 		
-		MessageSourceDemo messageSourceDemo = (MessageSourceDemo) context.getBean("messageSourceDemo");
-		messageSourceDemo.printMessages();
+		//MessageSourceDemo messageSourceDemo = (MessageSourceDemo) context.getBean("messageSourceDemo");
+		//messageSourceDemo.printMessages();
 	}
 
 }
