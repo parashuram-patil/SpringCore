@@ -1,9 +1,9 @@
 package com.cs.main;
 
-import java.util.Locale;
-
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cs.messagesource.MessageSourceDemo;
 
 public class MainClass {
 
@@ -27,11 +27,14 @@ public class MainClass {
 		//InteritanceDemo childClass = (InteritanceDemo) context.getBean("childClass");
 		//childClass.display();
 
-		 Long currentTimeMillis = System.currentTimeMillis();
+		 /*Long currentTimeMillis = System.currentTimeMillis();
 		 String messageEN = context.getMessage("greeting", new String[] {currentTimeMillis.toString(), "Good Morning"}, "default Greeting", Locale.ENGLISH);
 		 String messageFR = context.getMessage("greeting", null, "default Greeting", Locale.FRENCH);
 	     System.out.println(messageEN);
-	     System.out.println(messageFR);
+	     System.out.println(messageFR);*/
+		
+		MessageSourceDemo messageSourceDemo = (MessageSourceDemo) context.getBean("messageSourceDemo");
+		messageSourceDemo.printMessages();
 	}
 
 }
