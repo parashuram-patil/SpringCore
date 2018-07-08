@@ -9,7 +9,7 @@ public class MyApplicationEventListener implements ApplicationListener {
 
 	@Override
 	public void onApplicationEvent(ApplicationEvent event) {
-		System.out.println(event.toString());
+		System.out.println(event.toString() + " and caught by ApplicationListener");
 	}
 
 }

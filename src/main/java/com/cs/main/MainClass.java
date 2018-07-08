@@ -3,6 +3,8 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cs.eventhandling.MyPublisher;
+
 public class MainClass {
 
 	public static void main(String[] args) {
@@ -33,6 +35,9 @@ public class MainClass {
 		
 		//MessageSourceDemo messageSourceDemo = (MessageSourceDemo) context.getBean("messageSourceDemo");
 		//messageSourceDemo.printMessages();
+		
+		MyPublisher myPublisher = (MyPublisher) context.getBean("myPublisher");
+		myPublisher.publishEvent();
 	}
 
 }
