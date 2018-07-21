@@ -49,7 +49,6 @@ public class IteratorTypes {
     /*if there is only one function parameter we dont need paranthesis
     if zero or more than 1 parameter we need paranthesis*/
     intList.forEach(num -> printNumber(num));
-    
   }
 
   private static void printNumber(Integer integer)
