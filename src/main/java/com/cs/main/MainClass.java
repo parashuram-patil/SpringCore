@@ -47,7 +47,7 @@ public class MainClass {
 		
 		//ILamadasDemo demo = (MethodReference) context.getBean("methodReference");
 		
-		ILamadasDemo demo = (FunctionalComposition) context.getBean("functionComposition");
+		ILamadasDemo demo = (FunctionalComposition) context.getBean("functionalComposition");
 		
 		demo.execute();
 		
