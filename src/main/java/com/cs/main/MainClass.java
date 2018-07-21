@@ -3,16 +3,17 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cs.lamda.FunctionalComposition;
 import com.cs.lamda.ILamadasDemo;
-import com.cs.lamda.MethodReference;
 
 public class MainClass {
 
-	public static void main(String[] args) {
+	@SuppressWarnings("resource")
+  public static void main(String[] args) {
 		
 		//BeanFactory context = new XmlBeanFactory(new FileSystemResource("src/main/resources/spring.xml"));
         //ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+    AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
 		
 		/*Shape shape = (Shape)context.getBean("triangle");
@@ -44,7 +45,9 @@ public class MainClass {
 		
 		//ILamadasDemo demo = (IteratorTypes) context.getBean("iteratorTypes");
 		
-		ILamadasDemo demo = (MethodReference) context.getBean("methodReference");
+		//ILamadasDemo demo = (MethodReference) context.getBean("methodReference");
+		
+		ILamadasDemo demo = (FunctionalComposition) context.getBean("functionComposition");
 		
 		demo.execute();
 		

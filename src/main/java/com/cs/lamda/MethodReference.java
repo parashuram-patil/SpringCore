@@ -51,5 +51,4 @@ public class MethodReference implements ILamadasDemo {
         /*Since, order of the arguments are same we can remove it*/
         .reduce(0, Integer::sum));
   }
-  
 }
