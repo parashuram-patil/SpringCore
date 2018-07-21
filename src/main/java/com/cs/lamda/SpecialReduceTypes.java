@@ -1,14 +1,17 @@
 package com.cs.lamda;
 
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toMap;
 import static java.util.stream.Collectors.toSet;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
+import com.cs.model.Person;
 
 @Component
 public class SpecialReduceTypes implements ILamadasDemo {
@@ -44,6 +47,16 @@ public class SpecialReduceTypes implements ILamadasDemo {
         .collect(toSet());
     
     System.out.println("Special Reduce Types ---> Collect toSet() : " + doubleOfEvenSet);
+
+    Map<Integer, Person> personMap = getPersonList().stream()
+        .collect(toMap(person -> person.getMobileNumber(), person -> person));
+    
+    System.out.println("Special Reduce Types ---> Collect toToMap() : " + personMap);
   }
   
+  public static List<Person> getPersonList()
+  {
+    return Arrays.asList(new Person("Person-A", "Male", 1), new Person("Person-B", "Male", 2),
+        new Person("Person-C", "Female", 3));
+  }
 }
