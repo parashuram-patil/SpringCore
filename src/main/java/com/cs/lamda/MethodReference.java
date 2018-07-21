@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MethodReference {
+public class MethodReference implements ILamadasDemo {
   
   static MethodReference methodReference = new MethodReference();
   
@@ -20,6 +20,7 @@ public class MethodReference {
     System.out.print(input + "\t");
   }
   
+  @Override
   public void execute()
   {
     List<Integer> intList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
@@ -39,7 +40,7 @@ public class MethodReference {
     /*parameter as target*/
     System.out.println("\nParameter as target");
     intList.stream()
-        // here num isd used as target to invoke toString()
+        // here num is used as target to invoke toString()
         .map(num -> num.toString())
         // .map(String::toString)
         .forEach(MethodReference::print);

@@ -3,6 +3,8 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cs.lamda.ILamadasDemo;
+import com.cs.lamda.IteratorTypes;
 import com.cs.lamda.MethodReference;
 
 public class MainClass {
@@ -41,11 +43,11 @@ public class MainClass {
 		
 		/*Lamdas*/
 		
-		/*IteratorTypes iteratorTypes = (IteratorTypes) context.getBean("iteratorTypes");
-		iteratorTypes.demoIteratorTypes();*/
+		//ILamadasDemo demo = (IteratorTypes) context.getBean("iteratorTypes");
 		
-		MethodReference iteratorTypes = (MethodReference) context.getBean("methodReference");
-    iteratorTypes.execute();
+		ILamadasDemo demo = (MethodReference) context.getBean("methodReference");
+		
+		demo.execute();
 		
 	}
 }
