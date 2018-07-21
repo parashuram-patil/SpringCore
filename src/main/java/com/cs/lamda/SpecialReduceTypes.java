@@ -1,9 +1,11 @@
 package com.cs.lamda;
 
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
@@ -29,12 +31,19 @@ public class SpecialReduceTypes implements ILamadasDemo {
     .forEach(num -> doubleOfEven.add(num));
     System.out.println("Special Reduce Types ---> Collect : " + doubleOfEven);*/
     
-    List<Integer> doubleOfEven = intList.stream()
+    List<Integer> doubleOfEvenList = intList.stream()
         .filter(num -> num % 2 == 0)
         .map(num -> num * 2)
         .collect(toList());
     
-    System.out.println("Special Reduce Types ---> Collect toList() : " + doubleOfEven);
+    System.out.println("Special Reduce Types ---> Collect toList() : " + doubleOfEvenList);
+    
+    Set<Integer> doubleOfEvenSet = intList.stream()
+        .filter(num -> num % 2 == 0)
+        .map(num -> num * 2)
+        .collect(toSet());
+    
+    System.out.println("Special Reduce Types ---> Collect toSet() : " + doubleOfEvenSet);
   }
   
 }
