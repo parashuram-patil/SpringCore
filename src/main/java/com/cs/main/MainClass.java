@@ -4,7 +4,6 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cs.lamda.ILamadasDemo;
-import com.cs.lamda.IteratorTypes;
 import com.cs.lamda.MethodReference;
 
 public class MainClass {

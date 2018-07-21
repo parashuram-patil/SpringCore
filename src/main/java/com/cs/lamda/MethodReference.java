@@ -44,6 +44,12 @@ public class MethodReference implements ILamadasDemo {
         .map(num -> num.toString())
         // .map(String::toString)
         .forEach(MethodReference::print);
+    
+    System.out.println("\nMethod with multiple arguments");
+    print(intList.stream()
+        //.reduce(0, (total, num) -> Integer.sum(total, num)));
+        /*Since, order of the arguments are same we can remove it*/
+        .reduce(0, Integer::sum));
   }
   
 }
