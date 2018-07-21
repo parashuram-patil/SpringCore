@@ -3,8 +3,8 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.lamda.FunctionalComposition;
 import com.cs.lamda.ILamadasDemo;
+import com.cs.lamda.ParallelStreams;
 
 public class MainClass {
 
@@ -47,7 +47,9 @@ public class MainClass {
 		
 		//ILamadasDemo demo = (MethodReference) context.getBean("methodReference");
 		
-		ILamadasDemo demo = (FunctionalComposition) context.getBean("functionalComposition");
+		//ILamadasDemo demo = (FunctionalComposition) context.getBean("functionalComposition");
+		
+		ILamadasDemo demo = (ParallelStreams) context.getBean("parallelStreams");
 		
 		demo.execute();
 		
