@@ -33,7 +33,7 @@ public class StreamPerformance implements ILamadasDemo {
         .filter(StreamPerformance::isModTwo)
         .map(StreamPerformance::compute)
         .findFirst();
-    /*if findFirst() {termination operation}, is not there stream doent evaluate*/ 
+    /*if findFirst(){termination operation}, is not there stream doesnt evaluate*/ 
   }
   
   private static boolean isModTwo(int e)
