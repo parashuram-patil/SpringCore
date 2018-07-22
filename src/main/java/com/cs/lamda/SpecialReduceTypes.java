@@ -1,5 +1,7 @@
 package com.cs.lamda;
 
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 import static java.util.stream.Collectors.toSet;
@@ -38,25 +40,29 @@ public class SpecialReduceTypes implements ILamadasDemo {
         .filter(num -> num % 2 == 0)
         .map(num -> num * 2)
         .collect(toList());
-    
     System.out.println("Special Reduce Types ---> Collect toList() : " + doubleOfEvenList);
     
     Set<Integer> doubleOfEvenSet = intList.stream()
         .filter(num -> num % 2 == 0)
         .map(num -> num * 2)
         .collect(toSet());
-    
     System.out.println("Special Reduce Types ---> Collect toSet() : " + doubleOfEvenSet);
-
+    
     Map<Integer, Person> personMap = getPersonList().stream()
         .collect(toMap(person -> person.getMobileNumber(), person -> person));
+    System.out.println("Special Reduce Types ---> Collect toToMap() : " + personMap.toString());
     
-    System.out.println("Special Reduce Types ---> Collect toToMap() : " + personMap);
+    /*given a list of People, prepare a map groupped by name with there genders list
+    ie map with key as name, and value as list of gender*/
+    Map<String, List<String>> groupingWithMapping = getPersonList().stream()
+        .collect(groupingBy(Person::getName, mapping(Person::getGender, toList())));
+    System.out.println("Grouping with Mapping : " + groupingWithMapping.toString());    
   }
   
   public static List<Person> getPersonList()
   {
     return Arrays.asList(new Person("Person-A", "Male", 1), new Person("Person-B", "Male", 2),
-        new Person("Person-C", "Female", 3));
+        new Person("Person-C", "Female", 3), new Person("Person-A", "Male", 4),
+        new Person("Person-C", "Female", 5));
   }
 }
