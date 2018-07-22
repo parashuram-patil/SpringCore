@@ -21,29 +21,28 @@ public class StreamPerformance implements ILamadasDemo {
     int result = 0;
     TimeCalculator.calculate(
         () -> System.out.println("Answer with Legacy code : " + legacyCode(intList, result)));
-    
-    TimeCalculator
-        .calculate(() -> System.out.println("Answer with Steam code : " + streamCode(intList)));
+     
+    TimeCalculator.calculate(
+        () -> System.out.println("Answer with Optimised Steam code : " + optimisedStreamCode(intList)));
   }
   
-  private Optional<Integer> streamCode(List<Integer> intList)
+  private Optional<Integer> optimisedStreamCode(List<Integer> intList)
   {
     return intList.stream()
-        .filter(e -> e > 3)
-        .filter(e -> e % 2 == 0)
-        .map(e -> compute(e))
+        .filter(StreamPerformance::isGtThree)
+        .filter(StreamPerformance::isModTwo)
+        .map(StreamPerformance::compute)
         .findFirst();
   }
   
-  private int legacyCode(List<Integer> intList, int result)
+  private static boolean isModTwo(int e)
   {
-    for (int e : intList) {
-      if (e > 3 && e % 2 == 0) {
-        result = compute(e);
-        break;
-      }
-    }
-    return result;
+    return e % 2 == 0 ? true : false;
+  }
+  
+  private static boolean isGtThree(int e)
+  {
+    return e > 3 ? true : false;
   }
   
   private static int compute(int e)
@@ -56,5 +55,16 @@ public class StreamPerformance implements ILamadasDemo {
     }
     
     return e * 2;
+  }
+  
+  private int legacyCode(List<Integer> intList, int result)
+  {
+    for (int e : intList) {
+      if (e > 3 && e % 2 == 0) {
+        result = compute(e);
+        break;
+      }
+    }
+    return result;
   }
 }
