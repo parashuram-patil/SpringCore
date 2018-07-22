@@ -4,7 +4,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cs.lamda.ILamadasDemo;
-import com.cs.lamda.SpecialReduceTypes;
+import com.cs.lamda.StreamPerformance;
 
 public class MainClass {
 
@@ -51,7 +51,9 @@ public class MainClass {
 		
 		//ILamadasDemo demo = (ParallelStreams) context.getBean("parallelStreams");
 		
-		ILamadasDemo demo = (SpecialReduceTypes) context.getBean("specialReduceTypes");
+		//ILamadasDemo demo = (SpecialReduceTypes) context.getBean("specialReduceTypes");
+		
+		ILamadasDemo demo = (StreamPerformance) context.getBean("streamPerformance");
 		
 		demo.execute();
 		
