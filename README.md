@@ -12,7 +12,7 @@
 ## How to use?
 ```sh
 1. Clone or download
-2. run command : _gradle clean eclipse_
+2. run command : gradle clean eclipse
 2. Uncomment necessary classes from main class, and run it as java application
 
 
