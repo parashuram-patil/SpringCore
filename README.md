@@ -49,4 +49,4 @@ _GitHub   : [parashuram-patil](https://github.com/parashuram-patil)_
 
 ## References
 
-[Get a Taste of Lambdas and Get Addicted to Streams by Venkat Subramaniam](https://www.youtube.com/watch?v=1OpAgZvYXLQ)
+* [Get a Taste of Lambdas and Get Addicted to Streams by Venkat Subramaniam](https://www.youtube.com/watch?v=1OpAgZvYXLQ)
