@@ -41,9 +41,9 @@
 ## Contact
 
 ### Parashuram S. Patil
-_Email    : parasharam_patil@ymail.com_
-_LinkedIn : [Parashuram Patil](https://www.linkedin.com/in/parashuram-patil-aa0b6288/)_
-_GitHub   : [parashuram-patil](https://github.com/parashuram-patil)_
+Email    : _parasharam_patil@ymail.com_ <>
+LinkedIn : _[Parashuram Patil](https://www.linkedin.com/in/parashuram-patil-aa0b6288/)_ <>
+GitHub   : _[parashuram-patil](https://github.com/parashuram-patil)_
 
 
 ## References
