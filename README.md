@@ -6,7 +6,15 @@
 ```sh
 1. Spring Core 5.0.0
 2. Gradle 4.0
+3. Eclipse IDE
 ```
+
+## How to use?
+```sh
+1. Clone or download
+2. run command : _gradle clean eclipse_
+2. Uncomment necessary classes from main class, and run it as java application
+
 
 ## Basic Spring Examples 
 
