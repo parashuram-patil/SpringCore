@@ -3,14 +3,12 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.lamda.ILamadasDemo;
-import com.cs.lamda.StreamCharacterstics;
-import com.cs.lamda.StreamPerformance;
+import com.cs.lookup.TestLookup;
 
 public class MainClass {
 
 	@SuppressWarnings("resource")
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
 		
 		//BeanFactory context = new XmlBeanFactory(new FileSystemResource("src/main/resources/spring.xml"));
         //ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
@@ -56,7 +54,9 @@ public class MainClass {
 		
 		//ILamadasDemo demo = (StreamPerformance) context.getBean("streamPerformance");
 		
-		ILamadasDemo demo = (StreamCharacterstics) context.getBean("streamCharacterstics");
+		//ILamadasDemo demo = (StreamCharacterstics) context.getBean("streamCharacterstics");
+		
+		TestLookup demo = (TestLookup) context.getBean("testLookup");
 		
 		demo.execute();
 		
