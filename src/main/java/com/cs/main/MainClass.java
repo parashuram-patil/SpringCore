@@ -1,9 +1,11 @@
 package com.cs.main;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cs.lookup.TestLookup;
+import com.psp.componentscan.ComponetScanConfig;
 
 public class MainClass {
 
@@ -56,9 +58,12 @@ public class MainClass {
 		
 		//ILamadasDemo demo = (StreamCharacterstics) context.getBean("streamCharacterstics");
 		
-		TestLookup demo = (TestLookup) context.getBean("testLookup");
+		//TestLookup demo = (TestLookup) context.getBean("testLookup");
 		
-		demo.execute();
+		//demo.execute();
+		
+		AnnotationConfigApplicationContext anotherContext = new AnnotationConfigApplicationContext(ComponetScanConfig.class);
+	  System.out.println("Contains Class1?: " + anotherContext.containsBean("class1"));
 		
 	}
 }
