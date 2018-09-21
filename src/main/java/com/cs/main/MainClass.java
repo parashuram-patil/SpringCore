@@ -1,16 +1,14 @@
 package com.cs.main;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.cs.lookup.TestLookup;
-import com.psp.componentscan.ComponetScanConfig;
 
 public class MainClass {
 
 	@SuppressWarnings("resource")
   public static void main(String[] args) throws Exception {
+	  
+	  System.out.println("**********     Starting Application     **********");
 		
 		//BeanFactory context = new XmlBeanFactory(new FileSystemResource("src/main/resources/spring.xml"));
         //ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
@@ -62,8 +60,9 @@ public class MainClass {
 		
 		//demo.execute();
 		
-		AnnotationConfigApplicationContext anotherContext = new AnnotationConfigApplicationContext(ComponetScanConfig.class);
-	  System.out.println("Contains Class1?: " + anotherContext.containsBean("class1"));
+		/*AnnotationConfigApplicationContext anotherContext = new AnnotationConfigApplicationContext(ComponetScanConfig.class);
+	  System.out.println("Contains Class1? : " + anotherContext.containsBean("class1"));*/
 		
+		System.out.println("**********     Ending Application     **********");
 	}
 }
