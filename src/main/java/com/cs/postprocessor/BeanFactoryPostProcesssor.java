@@ -11,6 +11,9 @@ public class BeanFactoryPostProcesssor implements BeanFactoryPostProcessor {
   public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
       throws BeansException
   {
+    //BeanDefinitionBuilder beanDefination = BeanDefinitionBuilder.rootBeanDefinition(XYZ.class);
+    //((DefaultListableBeanFactory) beanFactory).registerBeanDefinition("testBean", beanDefination.getBeanDefinition());
+    
     System.out.println(beanFactory.getBeanDefinitionCount());
   }
   
