@@ -3,14 +3,15 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.lamda.ILamadasDemo;
-import com.cs.lamda.StreamCharacterstics;
-import com.cs.lamda.StreamPerformance;
+import com.cs.di.DiDemo;
+
 
 public class MainClass {
 
 	@SuppressWarnings("resource")
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
+	  
+	  System.out.println("**********     Starting Application     **********");
 		
 		//BeanFactory context = new XmlBeanFactory(new FileSystemResource("src/main/resources/spring.xml"));
         //ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
@@ -56,9 +57,21 @@ public class MainClass {
 		
 		//ILamadasDemo demo = (StreamPerformance) context.getBean("streamPerformance");
 		
-		ILamadasDemo demo = (StreamCharacterstics) context.getBean("streamCharacterstics");
+		//ILamadasDemo demo = (StreamCharacterstics) context.getBean("streamCharacterstics");
 		
-		demo.execute();
+		//TestLookup demo = (TestLookup) context.getBean("testLookup");
 		
+		//demo.execute();
+		
+		/*AnnotationConfigApplicationContext anotherContext = new AnnotationConfigApplicationContext(ComponetScanConfig.class);
+	  System.out.println("Contains Class1? : " + anotherContext.containsBean("class1"));*/
+		
+		//JdbcDemo jdbcDemo =  (JdbcDemo) context.getBean("jdbcDemo");
+		//jdbcDemo.execute();
+		
+		DiDemo demo = (DiDemo) context.getBean("diDemo");
+		
+		
+		System.out.println("**********     Ending Application     **********");
 	}
 }

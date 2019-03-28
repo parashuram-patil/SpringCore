@@ -1,5 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'com.google.protobuf'
+//apply from: 'proto.plugin'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -11,8 +13,75 @@ repositories {
     mavenCentral()
 }
 
+/*configurations {
+    provided
+    compile.extendsFrom provided
+}*/
+
 dependencies {
+	 //provided files('lib/ojdbc14.jar')
      compile 'org.springframework:spring-core:5.0.0.RELEASE'
      compile 'org.springframework:spring-beans:5.0.0.RELEASE'
      compile 'org.springframework:spring-context:5.0.0.RELEASE'
+     
+     compile 'com.google.protobuf:protobuf-java:3.6.1'
+     compile 'com.google.protobuf:protobuf-java-util:3.6.1'
+     //compile 'com.google.protobuf:protobuf-gradle-plugin:0.8.6'
+     //compile 'com.google.code.gson:gson:2.3.1'
+     //compile 'com.google.guava:guava:23.0'
+     //compile 'com.google.common:google-collect:0.5'
+     
+     //compile 'com.fasterxml.jackson.core:jackson-core:2.6.2'
+	 //compile 'com.fasterxml.jackson.core:jackson-databind:2.6.2'
+	 
+	 compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.8.RELEASE'
+	 compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.1.1'
+
+	 compile group: 'org.postgresql', name: 'postgresql', version: '9.3-1102-jdbc41'
+	 	 
+	 //compile group: 'org.springframework', name: 'spring-context', version:'5.0.8.RELEASE'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.6'
+    }
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'src/main/proto'
+        }
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+}
+
+protobuf {
+    // Configure the protoc executable
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.0.0'
+    }
+    
+    generateProtoTasks.generatedFilesBaseDir = 'src'
+    
+    generateProtoTasks {
+        // all() returns the collection of all protoc tasks
+        all().each { task ->
+            // Here you can configure the task
+        }
+
+        // In addition to all(), you may get the task collection by various
+        // criteria:
+
+        // (Java only) returns tasks for a sourceSet
+        ofSourceSet('main')
+
+    } 
 }
