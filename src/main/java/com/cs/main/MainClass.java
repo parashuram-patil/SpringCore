@@ -3,7 +3,8 @@ package com.cs.main;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cs.jdbc.JdbcDemo;
+import com.cs.di.DiDemo;
+
 
 public class MainClass {
 
@@ -65,8 +66,11 @@ public class MainClass {
 		/*AnnotationConfigApplicationContext anotherContext = new AnnotationConfigApplicationContext(ComponetScanConfig.class);
 	  System.out.println("Contains Class1? : " + anotherContext.containsBean("class1"));*/
 		
-		JdbcDemo jdbcDemo =  (JdbcDemo) context.getBean("jdbcDemo");
-		jdbcDemo.execute();
+		//JdbcDemo jdbcDemo =  (JdbcDemo) context.getBean("jdbcDemo");
+		//jdbcDemo.execute();
+		
+		DiDemo demo = (DiDemo) context.getBean("diDemo");
+		
 		
 		System.out.println("**********     Ending Application     **********");
 	}
